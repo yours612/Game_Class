@@ -8,11 +8,13 @@ public class Gun : MonoBehaviour
     public float speed = 20f;
 
     private PlayerControl playerCtrl;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         playerCtrl = transform.parent.GetComponent<PlayerControl>();
+        anim = transform.root.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -20,6 +22,7 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            anim.SetTrigger("Shoot");
             if (playerCtrl.bFaceRight)
             {
                 Rigidbody2D bullet = Instantiate(rocket, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));

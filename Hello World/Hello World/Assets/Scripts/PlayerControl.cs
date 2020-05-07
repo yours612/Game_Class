@@ -9,17 +9,21 @@ public class PlayerControl : MonoBehaviour
     public float jumpForce = 100f;
 
     private bool grounded = false;
-    private bool jump = false;
+    [HideInInspector]
+    public bool jump = false;
     private Transform groundCheck;
     private Rigidbody2D heroBody;
     [HideInInspector]
     public bool bFaceRight = true;
+
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         heroBody = GetComponent<Rigidbody2D>();
         groundCheck = transform.Find("GroundCheck");
+        anim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -32,6 +36,7 @@ public class PlayerControl : MonoBehaviour
         if (Mathf.Abs(heroBody.velocity.x) > maxSpeed)
             heroBody.velocity = new Vector2(Mathf.Sign(heroBody.velocity.x) * maxSpeed,
                                             heroBody.velocity.y);
+        anim.SetFloat("speed", Mathf.Abs(heroBody.velocity.x));
 
         if (h < 0 && bFaceRight)
             flip();
@@ -40,6 +45,7 @@ public class PlayerControl : MonoBehaviour
 
         if (jump)
         {
+            anim.SetTrigger("Jump");
             heroBody.AddForce(new Vector2(0, jumpForce));
             jump = false;
         }
