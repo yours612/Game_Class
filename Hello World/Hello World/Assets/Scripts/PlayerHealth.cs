@@ -59,6 +59,8 @@ public class PlayerHealth : MonoBehaviour
         GetComponentInChildren<Gun>().enabled = false;
 
         anim.SetTrigger("Death");
+
+        
     }
 
     void OnCollisionEnter2D(Collision2D col)

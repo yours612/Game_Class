@@ -240,7 +240,7 @@ Transform:
   m_GameObject: {fileID: 442816430374945976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.687, y: 0.159, z: -11.668827}
-  m_LocalScale: {x: 0.34106252, y: 0.3593164, z: 1}
+  m_LocalScale: {x: 0.27053005, y: 0.27024722, z: 1}
   m_Children:
   - {fileID: 442816432293937088}
   - {fileID: 442816432248309057}
@@ -370,8 +370,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  damageInterval: 2
-  hurtForce: 10
+  damageInterval: 0.5
+  hurtForce: 50
   damageAmout: 10
 --- !u!1 &442816431141307236
 GameObject:
@@ -1248,7 +1248,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6025721494590311790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.63, y: 1.15, z: 0}
+  m_LocalPosition: {x: 3.13, y: 1.15, z: 0}
   m_LocalScale: {x: 0.32625002, y: 0.0810266, z: 1}
   m_Children: []
   m_Father: {fileID: 442816430374945979}
@@ -1267,4 +1267,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocket: {fileID: 633425882978875009, guid: 43c75a4240c164a488bcd3d7045ac056, type: 3}
-  speed: 5
+  speed: 10
