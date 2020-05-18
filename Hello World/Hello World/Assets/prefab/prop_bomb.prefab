@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3345110480182514769}
   - component: {fileID: 3345110480182514860}
   - component: {fileID: 3345110480182514863}
+  - component: {fileID: 2133000257}
   m_Layer: 0
   m_Name: prop_bomb
   m_TagString: Untagged
@@ -104,7 +105,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &3345110480182514863
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -121,6 +122,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.5600002
+--- !u!114 &2133000257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3345110480182514768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4361f5cf1826d8468f9b0e0e157d272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombRadius: 10
+  bombForce: 100
+  fuseTime: 1.5
+  explosion: {fileID: 6743978033463306230, guid: 7de91a6cb20dfa54b877a84f31bd9109,
+    type: 3}
+  explosionFX: {fileID: 3044434896396740102, guid: 0500e72d6ae25614ab381d3d4d219877,
+    type: 3}
 --- !u!1 &9221058012685202453
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,13 +166,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9221058012685202453}
-  m_LocalRotation: {x: -0, y: -0, z: -0.34586167, w: 0.9382855}
-  m_LocalPosition: {x: 1.6699994, y: 1.9799991, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.6214176, y: 0.33740216, z: -0.33740216, w: 0.6214176}
+  m_LocalPosition: {x: 2.6, y: 2.2, z: 0}
+  m_LocalScale: {x: 2, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 3345110480182514862}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -40.469}
+  m_LocalEulerAnglesHint: {x: -33, y: 90, z: -90}
 --- !u!198 &5549120901347473619
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -781,7 +801,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 36.206226
+    angle: 36.7
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -4849,8 +4869,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 981754399
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0

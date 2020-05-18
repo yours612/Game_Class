@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6777284311615005876}
   - component: {fileID: 1851017063140755297}
+  - component: {fileID: 7442632995069695117}
   m_Layer: 0
   m_Name: explosionCircle
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6743978033463306230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.192, y: 2.155, z: 0}
-  m_LocalScale: {x: 0.13521901, y: 0.13107999, z: 1}
+  m_LocalScale: {x: 0.32731327, y: 0.3172943, z: 2.420616}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7442632995069695117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6743978033463306230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bdd36336a62a8c45b681c6ce4aa5cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 0.5

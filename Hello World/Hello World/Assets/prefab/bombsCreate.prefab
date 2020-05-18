@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7217660006661703352}
   - component: {fileID: 7217660006661703355}
   - component: {fileID: 7217660006661703354}
+  - component: {fileID: 2011509887}
   m_Layer: 0
   m_Name: bombsCreate
   m_TagString: Untagged
@@ -51,7 +52,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -74,6 +75,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2011509887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217660006661703357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad409eaa513698b4980a24e897d193fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7217660007083973534
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +179,10 @@ GameObject:
   - component: {fileID: 7217660008657197446}
   - component: {fileID: 7217660008657197444}
   - component: {fileID: 7217660008657197447}
-  m_Layer: 0
+  - component: {fileID: 3811638085010905132}
+  - component: {fileID: 16199604551159585}
+  - component: {fileID: 460419178}
+  m_Layer: 11
   m_Name: prop_crate_ammo_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,3 +280,48 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.06, y: 3.15}
   m_EdgeRadius: 0
+--- !u!58 &3811638085010905132
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217660008657197465}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.00000023841858}
+  serializedVersion: 2
+  m_Radius: 2.03
+--- !u!114 &16199604551159585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217660008657197465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c2db219bd6062d439bab67da4635c40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &460419178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217660008657197465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4361f5cf1826d8468f9b0e0e157d272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombRadius: 1
+  bombForce: 10
+  fuseTime: 1.5
+  explosion: {fileID: 6743978033463306230, guid: 7de91a6cb20dfa54b877a84f31bd9109,
+    type: 3}

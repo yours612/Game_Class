@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 442816430374945983}
   - component: {fileID: 204395755}
   - component: {fileID: 204395756}
+  - component: {fileID: 1171724208}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -373,6 +374,20 @@ MonoBehaviour:
   damageInterval: 0.5
   hurtForce: 50
   damageAmout: 10
+--- !u!114 &1171724208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442816430374945976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4574d8779499a84e963bfbedd10b91e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bomb: {fileID: 3345110480182514768, guid: 5f8d32c353d701345a734e2e7e9f332b, type: 3}
+  bombCount: 0
 --- !u!1 &442816431141307236
 GameObject:
   m_ObjectHideFlags: 0

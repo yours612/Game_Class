@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 7833699072105702438}
   - component: {fileID: 7833699072105702457}
   - component: {fileID: 8867804759648208022}
-  m_Layer: 0
+  - component: {fileID: 2748507860070545420}
+  - component: {fileID: 1314987903}
+  m_Layer: 11
   m_Name: prop_crate_health_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +111,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.11, y: 3.38}
   m_EdgeRadius: 0
+--- !u!58 &2748507860070545420
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7833699072105702439}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.615
+--- !u!114 &1314987903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7833699072105702439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064476f2317cfc947af18f4be21734ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBonus: 20
 --- !u!1 &7833699072547112325
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,8 +165,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7833699072547112325}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 1.003, z: 0}
-  m_LocalScale: {x: 0.29566407, y: 0.33919618, z: 1}
+  m_LocalPosition: {x: -0.06, y: 1.06, z: 0}
+  m_LocalScale: {x: 0.3275958, y: 0.3559036, z: 1}
   m_Children: []
   m_Father: {fileID: 7833699073226963296}
   m_RootOrder: 1
@@ -201,6 +232,7 @@ GameObject:
   - component: {fileID: 7833699073226963296}
   - component: {fileID: 7833699073226963297}
   - component: {fileID: 959907156969994365}
+  - component: {fileID: 1733256568}
   m_Layer: 0
   m_Name: healthCreate
   m_TagString: Untagged
@@ -264,3 +296,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1733256568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7833699073226963310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad409eaa513698b4980a24e897d193fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
