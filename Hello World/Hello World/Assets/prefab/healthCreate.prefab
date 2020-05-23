@@ -140,6 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBonus: 20
+  healthPickup: {fileID: 8300000, guid: fdcf63a3454d74ea5bdd46db131f3078, type: 3}
+  mixer: {fileID: 24100000, guid: 134ed5f6fd305d3419764386c7a96808, type: 2}
 --- !u!1 &7833699072547112325
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class rocket : MonoBehaviour
     }
     void OnExplode()
     {
+  
         Quaternion randRotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
         Instantiate(explosion, transform.position, randRotation);
     }

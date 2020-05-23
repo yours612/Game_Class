@@ -25,14 +25,10 @@ public class PickupSpawner : MonoBehaviour
 
     void Start()
     {
-        // 启动第一次道具产生
-        if (layBombs.bombCount < 3)
-        {
-            for (int i = layBombs.bombCount; i < 2; i++)
-            {              
-                StartCoroutine(DeliverPickup());
-            }
-        }
+        // 启动第一次道具产生            
+        StartCoroutine(DeliverPickup());
+            
+        
     }
 
 

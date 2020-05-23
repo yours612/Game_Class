@@ -134,13 +134,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4361f5cf1826d8468f9b0e0e157d272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombRadius: 10
+  bombRadius: 7
   bombForce: 100
   fuseTime: 1.5
   explosion: {fileID: 6743978033463306230, guid: 7de91a6cb20dfa54b877a84f31bd9109,
     type: 3}
-  explosionFX: {fileID: 3044434896396740102, guid: 0500e72d6ae25614ab381d3d4d219877,
-    type: 3}
+  boom: {fileID: 8300000, guid: 8b4e61c51941a46d1aac273472c814fd, type: 3}
+  fuses: {fileID: 8300000, guid: 238da4efc08184aee919af254edb2ef1, type: 3}
+  mixer: {fileID: 24100000, guid: 134ed5f6fd305d3419764386c7a96808, type: 2}
 --- !u!1 &9221058012685202453
 GameObject:
   m_ObjectHideFlags: 0

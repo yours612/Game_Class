@@ -16,12 +16,14 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer ren;              // 更换对应图片
     private Rigidbody2D enemyBody;           // 敌人的刚体
     private bool bDeath = false;                     // 敌人已死
+    private PlayerControl playerControl;
 
     void Start()
     {
         frontCheck = transform.Find("FrontCheck").transform;
         ren = transform.Find("char_enemy_alienShip").GetComponent<SpriteRenderer>();
         enemyBody = GetComponent<Rigidbody2D>();
+        playerControl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
     }
 
     private void FixedUpdate()
@@ -44,6 +46,7 @@ public class Enemy : MonoBehaviour
         if (HP == 0 && !bDeath)
         {
             death();
+            playerControl.taunt();
         }
     }
 
@@ -73,6 +76,7 @@ public class Enemy : MonoBehaviour
         Vector3 scorepos = transform.position;
         scorepos.y += 1f;
         Instantiate(UI_100points,scorepos,Quaternion.identity);
+
     }
 
     public void Hurt()

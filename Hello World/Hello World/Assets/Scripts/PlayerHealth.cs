@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -8,7 +9,10 @@ public class PlayerHealth : MonoBehaviour
     public float damageInterval = 2f;
     public float hurtForce = 10f;
     public float damageAmout = 10f;
+    public AudioClip[] ouchClips;
+    public AudioMixer mixer;
 
+    private AudioSource audio;
     private SpriteRenderer healthBar;   // 血条
     private float lastHurtTime;         // 受伤时刻          
     private Vector3 healthScale;        // 血条比例，控制长度
@@ -19,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         playerControl = GetComponent<PlayerControl>();
         healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
         healthScale = healthBar.transform.localScale;
@@ -39,6 +44,17 @@ public class PlayerHealth : MonoBehaviour
         hero.AddForce(hurtVector * hurtForce);
 
         health -= damageAmout;
+
+        if (audio != null)
+        {
+            if (!audio.isPlaying)
+            {
+                int i = Random.Range(0, ouchClips.Length);
+                audio.clip = ouchClips[i];
+                audio.Play();
+                mixer.SetFloat("hero", 0);
+            }
+        }
         UpdateHealthBar();
     }
 

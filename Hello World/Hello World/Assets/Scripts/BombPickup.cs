@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BombPickup : MonoBehaviour
 {
     private Animator anim;             
-    private bool landed = false;       
+    private bool landed = false;
+
+    public AudioClip bombsPickup;
+    public AudioMixer mixer;
 
 
     void Awake()
@@ -20,6 +24,9 @@ public class BombPickup : MonoBehaviour
 
         if (other.tag == "Player")
         {
+            AudioSource.PlayClipAtPoint(bombsPickup, transform.position);
+            mixer.SetFloat("props", 0);
+
             other.GetComponent<LayBombs>().bombCount++;
 
             Destroy(transform.root.gameObject);

@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerControl : MonoBehaviour
 {
     public float maxSpeed = 5f;
     public float moveForce = 400f;
     public float jumpForce = 100f;
+    public AudioClip[] jumpClips;
+    public AudioMixer mixer;
+    public AudioClip[] taunts;
 
+    private AudioSource audio;
     private bool grounded = false;
     [HideInInspector]
     public bool jump = false;
@@ -21,6 +26,7 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         heroBody = GetComponent<Rigidbody2D>();
         groundCheck = transform.Find("GroundCheck");
         anim = GetComponent<Animator>();
@@ -45,9 +51,21 @@ public class PlayerControl : MonoBehaviour
 
         if (jump)
         {
+
             anim.SetTrigger("Jump");
             heroBody.AddForce(new Vector2(0, jumpForce));
             jump = false;
+
+            if (audio != null)
+            {
+                if (!audio.isPlaying)
+                {
+                    int i = Random.RandomRange(0, jumpClips.Length);
+                    audio.clip = jumpClips[i];
+                    audio.Play();
+                    mixer.SetFloat("hero", 0);
+                }
+            }
         }
     }
 
@@ -68,5 +86,19 @@ public class PlayerControl : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
         bFaceRight = !bFaceRight;
+    }
+
+    public void taunt()
+    {
+        if (audio != null)
+        {
+            if (!audio.isPlaying)
+            {
+                int i = Random.Range(0, taunts.Length);
+                audio.clip = taunts[i];
+                audio.Play();
+                mixer.SetFloat("hero", 0);
+            }
+        }
     }
 }

@@ -97,7 +97,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 8676329602996191693, guid: e63b58522e49df74088991ff263cd394,
     type: 3}
-  enemy: {fileID: 1080539635, guid: 9bcd055e6f21d414fb409770ee871652, type: 3}
 --- !u!1 &5918988170833082946
 GameObject:
   m_ObjectHideFlags: 0

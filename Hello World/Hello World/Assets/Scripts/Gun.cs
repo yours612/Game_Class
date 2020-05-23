@@ -22,7 +22,11 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            
             anim.SetTrigger("Shoot");
+
+            GetComponent<AudioSource>().Play();
+
             if (playerCtrl.bFaceRight)
             {
                 Rigidbody2D bullet = Instantiate(rocket, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
