@@ -11,15 +11,16 @@ public class PlayerControl : MonoBehaviour
     public AudioClip[] jumpClips;
     public AudioMixer mixer;
     public AudioClip[] taunts;
+    [HideInInspector]
+    public bool bFaceRight = true;
+    [HideInInspector]
+    public bool jump = false;
+    //public static int grade = 0;
 
     private AudioSource audio;
     private bool grounded = false;
-    [HideInInspector]
-    public bool jump = false;
     private Transform groundCheck;
     private Rigidbody2D heroBody;
-    [HideInInspector]
-    public bool bFaceRight = true;
 
     private Animator anim;
 
@@ -90,6 +91,9 @@ public class PlayerControl : MonoBehaviour
 
     public void taunt()
     {
+        Score.x += 100;
+        Score.score.text = "Score: " + Score.x;
+        
         if (audio != null)
         {
             if (!audio.isPlaying)

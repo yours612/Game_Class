@@ -92,6 +92,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: cad20b676e0a97e4686e12912e14dbb8
+    name: master
   - guid: 1f1458d8821a3074e95eb0346cc2917d
     name: hero
   - guid: 1e477e56f080afd4591224e2a4ff9aeb
@@ -162,8 +164,9 @@ AudioMixerSnapshotController:
     2d67ff944f1470348a587e0ed4b30b56: -0
     c079444541c0ac64ca4c371a8b051de8: 0.1
     08f33146610696c4195b769bad8c0756: -13.2
-    1e477e56f080afd4591224e2a4ff9aeb: -2.0424333
+    1e477e56f080afd4591224e2a4ff9aeb: -0.09041911
     b3def0c6d3134da41bbce1c1b89e771f: 0.1
+    cad20b676e0a97e4686e12912e14dbb8: 0.27000841
     0a553338301657a4da2652e6aadfef72: 0.1
     c5d9bd6838817ee429f809224bcbd972: 0
     80207099a881e654c89a45d16ab06877: 2

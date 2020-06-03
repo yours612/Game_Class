@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float health = 100f;
+    //public float health = 100f;
     public float damageInterval = 2f;
     public float hurtForce = 10f;
     public float damageAmout = 10f;
     public AudioClip[] ouchClips;
     public AudioMixer mixer;
+    [HideInInspector]
+    public float health;
 
     private AudioSource audio;
-    private SpriteRenderer healthBar;   // 血条
+    //private SpriteRenderer healthBar;   // 血条
     private float lastHurtTime;         // 受伤时刻          
-    private Vector3 healthScale;        // 血条比例，控制长度
+    private float healthScale;        // 血条比例，控制长度
     private PlayerControl playerControl;// 控制脚本
     private Rigidbody2D hero;
     private Animator anim;
@@ -25,16 +28,22 @@ public class PlayerHealth : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         playerControl = GetComponent<PlayerControl>();
-        healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
-        healthScale = healthBar.transform.localScale;
+        //healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
+        //healthScale = healthBar.transform.localScale;
+        //healthScale = slider.value;
         hero = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        health = GetComponentInChildren<Image>().fillAmount * 100f;
     }
 
     public void UpdateHealthBar()
     {
-        healthBar.material.color = Color.Lerp(Color.green, Color.red, 1 - health * 0.01f);
-        healthBar.transform.localScale = new Vector3(healthScale.x * health * 0.01f, 1, 1);
+        //healthBar.material.color = Color.Lerp(Color.green, Color.red, 1 - health * 0.01f);
+        //healthBar.transform.localScale = new Vector3(healthScale.x * health * 0.01f, 1, 1);
+        GetComponentInChildren<Image>().color = Color.Lerp(Color.green, Color.red,
+                                    1 - health * 0.01f);
+        GetComponentInChildren<Image>().fillAmount = health * 0.01f;
+
     }
 
     void TakeDamage(Transform enemy)

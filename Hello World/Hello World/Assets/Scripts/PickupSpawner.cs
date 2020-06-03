@@ -42,9 +42,9 @@ public class PickupSpawner : MonoBehaviour
         Vector3 dropPos = new Vector3(dropPosX, 15f, 1f);
 
         // 只产生炸弹
-        if (playerHealth.health >= highHealthThreshold)
+        if (playerHealth.health >= highHealthThreshold )
             Instantiate(pickups[0], dropPos, Quaternion.identity);
-        else if (playerHealth.health <= lowHealthThreshold)
+        else if (playerHealth.health<= lowHealthThreshold)
             // 只产生医疗包
             Instantiate(pickups[1], dropPos, Quaternion.identity);
         else

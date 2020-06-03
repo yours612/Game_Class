@@ -8,6 +8,7 @@ public class HealthPickup : MonoBehaviour
     public float healthBonus;
     public AudioClip healthPickup;
     public AudioMixer mixer;
+    public static float volunme = 0;
 
     private PickupSpawner pickupSpawner;
     private Animator anim;
@@ -33,8 +34,8 @@ public class HealthPickup : MonoBehaviour
 
             pickupSpawner.StartCoroutine(pickupSpawner.DeliverPickup());
 
-            AudioSource.PlayClipAtPoint(healthPickup, transform.position);
-            mixer.SetFloat("props", 0);
+            AudioSource.PlayClipAtPoint(healthPickup, GameObject.Find("Main Camera").transform.position, volunme);
+            //mixer.SetFloat("props", 0);
 
             Destroy(transform.root.gameObject);
         }

@@ -12,6 +12,7 @@ public class Bomb : MonoBehaviour
     public AudioClip boom;
     public AudioClip fuses;
     public AudioMixer mixer;
+    public static float volunme = 0;
 
     private ParticleSystem explosionFX;     // 爆炸粒子效果
     private LayBombs layBombs;              // Hero脚本
@@ -34,9 +35,9 @@ public class Bomb : MonoBehaviour
     IEnumerator BombDetonation()
     {
         // 等待两秒，用于播放引信燃烧效果
-        AudioSource.PlayClipAtPoint(fuses, GameObject.Find("Main Camera").transform.position);
+        AudioSource.PlayClipAtPoint(fuses, GameObject.Find("Main Camera").transform.position, volunme);
         
-        mixer.SetFloat("props", 20);
+        //mixer.SetFloat("props", 0);
 
         yield return new WaitForSeconds(fuseTime);
 
@@ -73,8 +74,8 @@ public class Bomb : MonoBehaviour
         // 实列化爆炸背景圆
         Instantiate(explosion, transform.position, Quaternion.identity);
 
-        AudioSource.PlayClipAtPoint(boom, GameObject.Find("Main Camera").transform.position);
-        mixer.SetFloat("props", 20);
+        AudioSource.PlayClipAtPoint(boom, GameObject.Find("Main Camera").transform.position, volunme);
+       // mixer.SetFloat("props", -30);
 
         // 销毁Bomb
         Destroy (gameObject);

@@ -10,6 +10,7 @@ public class BombPickup : MonoBehaviour
 
     public AudioClip bombsPickup;
     public AudioMixer mixer;
+    public static float volunme = 0;
 
 
     void Awake()
@@ -24,8 +25,8 @@ public class BombPickup : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            AudioSource.PlayClipAtPoint(bombsPickup, transform.position);
-            mixer.SetFloat("props", 0);
+            AudioSource.PlayClipAtPoint(bombsPickup, GameObject.Find("Main Camera").transform.position, volunme);
+            //mixer.SetFloat("props", 0);
 
             other.GetComponent<LayBombs>().bombCount++;
 
