@@ -43,14 +43,13 @@ public class Remover : MonoBehaviour
                     }
                 }
 
-
-                Invoke("reStart", 1f);
             }
-            else
-            {
-                Instantiate(splash, collision.transform.position, transform.rotation);
-                Destroy(collision.gameObject);
-            }
+            Invoke("reStart", 1f);
+        }
+        else
+        {
+            Instantiate(splash, collision.transform.position, transform.rotation);
+            Destroy(collision.gameObject);
         }
     }
 }
